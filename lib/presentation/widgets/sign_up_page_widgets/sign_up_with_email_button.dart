@@ -1,5 +1,5 @@
 import 'package:bloc_login/application/sign_up/sign_up_cubit.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,14 +9,20 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 20),
-      child: CupertinoButton(
-        padding: EdgeInsets.zero,
-        child: const Text('Sign Up'),
-        disabledColor: Colors.blueAccent.withOpacity(0.6),
-        color: Colors.blueAccent,
-        onPressed: state.displaySignUpButton ? () => context.read<SignUpCubit>().signUpWithCredentials() : null,
-      ),
-    );
+        padding: const EdgeInsets.only(top: 20),
+        child: ElevatedButton(
+          child: const Text('SignUp'),
+          onPressed: () {
+            state.displaySignUpButton
+                ? () => context.read<SignUpCubit>().signUpWithCredentials()
+                : null;
+          },
+          style: ElevatedButton.styleFrom(
+              primary: const Color(0xff0e4a86),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 120, vertical: 10),
+              textStyle:
+                  const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+        ));
   }
 }

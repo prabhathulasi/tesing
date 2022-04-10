@@ -14,36 +14,63 @@ class SignUpForm extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
         listener: (context, state) {
           if (state.status.isSubmissionFailure) {
-            var snackBar = SnackBar(content: Text(state.exceptionError), backgroundColor: Colors.red);
+            var snackBar = SnackBar(
+                content: Text(state.exceptionError),
+                backgroundColor: Colors.red);
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           } else if (state.status.isSubmissionSuccess) {
-            var snackBar = const SnackBar(content: Text("Success!"), backgroundColor: Colors.green);
+            var snackBar = const SnackBar(
+                content: Text("Success!"), backgroundColor: Colors.green);
             ScaffoldMessenger.of(context).showSnackBar(snackBar);
           }
         },
-        builder: (context, state) => Stack(children: [
-              Positioned.fill(
-                  child: SingleChildScrollView(
-                      padding: const EdgeInsets.fromLTRB(38.0, 0, 38.0, 8.0),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const SignUpText(),
-                            NameInputField(state: state),
-                            SignUpPageEmailInputField(state: state),
-                            SignUpPagePasswordInputField(state: state),
-                            RePasswordInputField(state: state),
-                            SignUp(state: state),
-                          ]))),
-              state.status.isSubmissionInProgress
-                  ? const Positioned(
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: CircularProgressIndicator(),
-                      ),
-                    )
-                  : Container()
-            ]));
+        builder: (context, state) => Container(
+              color: Colors.white,
+              child: Stack(children: [
+                Positioned.fill(
+                    child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Image.asset(
+                          "assets/login_image.png",
+                          width: MediaQuery.of(context).size.width,
+                        ))),
+                SingleChildScrollView(
+                  padding: const EdgeInsets.fromLTRB(25.0, 50, 38.0, 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SignUpText(),
+                      NameInputField(state: state),
+                      SignUpPageEmailInputField(state: state),
+                      SignUpPagePasswordInputField(state: state),
+                      RePasswordInputField(state: state),
+                      SignUp(state: state),
+                    ],
+                  ),
+                ),
+                // Positioned.fill(
+                //     child: SingleChildScrollView(
+                //         padding: const EdgeInsets.fromLTRB(38.0, 0, 38.0, 8.0),
+                //         child: Column(
+                //             crossAxisAlignment: CrossAxisAlignment.stretch,
+                //             mainAxisAlignment: MainAxisAlignment.start,
+                //             children: [
+                //               const SignUpText(),
+                //               NameInputField(state: state),
+                //               SignUpPageEmailInputField(state: state),
+                //               SignUpPagePasswordInputField(state: state),
+                //               RePasswordInputField(state: state),
+                //               SignUp(state: state),
+                //             ]))),
+                state.status.isSubmissionInProgress
+                    ? const Positioned(
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: CircularProgressIndicator(),
+                        ),
+                      )
+                    : Container()
+              ]),
+            ));
   }
 }

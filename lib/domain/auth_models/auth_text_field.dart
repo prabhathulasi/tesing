@@ -22,32 +22,34 @@ class AuthTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    UnderlineInputBorder border =
-        const UnderlineInputBorder(borderSide: BorderSide(color: Colors.blueAccent, width: 2));
-    UnderlineInputBorder errorBorder =
-        const UnderlineInputBorder(borderSide: BorderSide(color: Colors.redAccent, width: 2));
+    UnderlineInputBorder errorBorder = const UnderlineInputBorder(
+        borderSide: BorderSide(color: Colors.redAccent, width: 2));
     return Padding(
       padding: padding,
-      child: TextFormField(
-        keyboardType: keyboardType,
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          contentPadding: const EdgeInsets.symmetric(horizontal: 12),
-          filled: true,
-          hintText: isRequiredField ? '$hint*' : hint,
-          border: border,
-          disabledBorder: border,
-          enabledBorder: border,
-          errorBorder: errorBorder,
-          focusedErrorBorder: errorBorder,
-          errorText: error,
-          floatingLabelBehavior: FloatingLabelBehavior.never,
+      child: Card(
+        elevation: 5.0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: TextFormField(
+          keyboardType: keyboardType,
+          decoration: InputDecoration(
+            fillColor: Colors.white,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 12),
+            filled: true,
+            hintText: isRequiredField ? '$hint*' : hint,
+            border: InputBorder.none,
+            // disabledBorder: border,
+            // enabledBorder: border,
+            // errorBorder: errorBorder,
+            // focusedErrorBorder: errorBorder,
+            errorText: error,
+            floatingLabelBehavior: FloatingLabelBehavior.never,
+          ),
+          autocorrect: false,
+          textInputAction: TextInputAction.done,
+          obscureText: isPasswordField,
+          maxLines: 1,
+          onChanged: onChanged,
         ),
-        autocorrect: false,
-        textInputAction: TextInputAction.done,
-        obscureText: isPasswordField,
-        maxLines: 1,
-        onChanged: onChanged,
       ),
     );
   }

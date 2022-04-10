@@ -10,7 +10,8 @@ class SignInWithGoogle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(top: 5),
-        child: SignInButton(Buttons.Google, onPressed: () => context.read<LoginCubit>().signInWithGoogle()));
+        child: SignInButton(Buttons.Google,
+            onPressed: () => context.read<LoginCubit>().signInWithGoogle()));
   }
 }
 
@@ -21,7 +22,8 @@ class SignInWithGithub extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: SignInButton(Buttons.GitHub, onPressed: () => context.read<LoginCubit>().signInWithGithub()));
+        child: SignInButton(Buttons.GitHub,
+            onPressed: () => context.read<LoginCubit>().signInWithGithub()));
   }
 }
 
@@ -32,7 +34,8 @@ class SignInWithTwitter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: SignInButton(Buttons.Twitter, onPressed: () => context.read<LoginCubit>().signInWithTwitter()));
+        child: SignInButton(Buttons.Twitter,
+            onPressed: () => context.read<LoginCubit>().signInWithTwitter()));
   }
 }
 
@@ -43,7 +46,8 @@ class SignInWithApple extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: SignInButton(Buttons.Apple, onPressed: () => context.read<LoginCubit>().signInWithApple()));
+        child: SignInButton(Buttons.Apple,
+            onPressed: () => context.read<LoginCubit>().signInWithApple()));
   }
 }
 
@@ -54,6 +58,7 @@ class SignInWithMicrosoft extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: SignInButton(Buttons.Microsoft, onPressed: () => context.read<LoginCubit>().signInWithMicrosoft()));
+        child: SignInButton(Buttons.Microsoft,
+            onPressed: () => context.read<LoginCubit>().signInWithMicrosoft()));
   }
 }

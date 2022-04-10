@@ -21,49 +21,87 @@ class LoginForm extends StatelessWidget {
             listenWhen: (p, c) => p.status != c.status,
             listener: (context, state) {
               if (state.status.isSubmissionFailure) {
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(snackBarWhenFailure(snackBarFailureText: state.exceptionError));
+                ScaffoldMessenger.of(context).showSnackBar(snackBarWhenFailure(
+                    snackBarFailureText: state.exceptionError));
               } else if (state.status.isSubmissionSuccess) {
-                ScaffoldMessenger.of(context).showSnackBar(snackBarWhenSuccess());
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(snackBarWhenSuccess());
               }
             },
-            builder: (context, state) => Stack(children: [
-                  Positioned.fill(
-                    child: SingleChildScrollView(
-                      padding: const EdgeInsets.fromLTRB(38.0, 0, 38.0, 8.0),
+            builder: (context, state) => Container(
+                  color: Colors.white,
+                  child: Stack(children: [
+                    Positioned.fill(
+                        child: Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Image.asset(
+                              "assets/login_image.png",
+                              width: MediaQuery.of(context).size.width,
+                            ))),
+                    SingleChildScrollView(
+                      padding: const EdgeInsets.fromLTRB(25.0, 50, 38.0, 8.0),
                       child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            const LoginText(),
-                            EmailInputField(state: state),
-                            PasswordInputField(state: state),
-                            Row(
-                              children: const [
-                                Expanded(child: SignUpButton()),
-                                Expanded(child: Login()),
-                                Expanded(child: ForgotPassword())
-                              ],
-                            ),
-                            Column(children: const [
-                              SeperatedText(),
-                              SignInWithGoogle(),
-                              SignInWithGithub(),
-                              SignInWithTwitter(),
-                              SignInWithApple(),
-                              SignInWithMicrosoft()
-                            ])
-                          ]),
-                    ),
-                  ),
-                  state.status.isSubmissionInProgress
-                      ? const Positioned(
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: CircularProgressIndicator(),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const LoginText(),
+                          EmailInputField(state: state),
+                          PasswordInputField(state: state),
+                          const Center(child: Login()),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              ForgotPassword(),
+                              SignUpButton(),
+                            ],
                           ),
-                        )
-                      : Container()
-                ])));
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          const Center(child: SeperatedText()),
+                          const Center(child: SignInWithGoogle())
+                        ],
+                      ),
+                    ),
+
+                    // Positioned.fill(
+                    //   child: SingleChildScrollView(
+                    //     padding: const EdgeInsets.fromLTRB(38.0, 0, 38.0, 8.0),
+                    //     child: Column(
+                    //         crossAxisAlignment: CrossAxisAlignment.stretch,
+                    //         mainAxisAlignment: MainAxisAlignment.start,
+                    //         children: [
+
+                    //           const Text(
+                    //             'Hello Again!\nWelcome\nback',
+                    //             textAlign: TextAlign.left,
+                    //             style: TextStyle(
+                    //                 fontSize: 18, fontWeight: FontWeight.bold),
+                    //           ),
+                    //           EmailInputField(state: state),
+                    //           PasswordInputField(state: state),
+                    //           Row(
+                    //             children: const [
+                    //               Expanded(child: SignUpButton()),
+                    //               Expanded(child: Login()),
+                    //               Expanded(child: ForgotPassword())
+                    //             ],
+                    //           ),
+                    //           Column(children: const [
+                    //             SeperatedText(),
+                    //             SignInWithGoogle(),
+                    //           ])
+                    //         ]),
+                    //   ),
+                    // ),
+                    state.status.isSubmissionInProgress
+                        ? const Positioned(
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: CircularProgressIndicator(),
+                            ),
+                          )
+                        : Container()
+                  ]),
+                )));
   }
 }

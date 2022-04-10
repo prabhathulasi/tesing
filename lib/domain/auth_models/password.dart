@@ -6,14 +6,17 @@ class Password extends FormzInput<String, PasswordValidationError> {
   const Password.pure() : super.pure('');
   const Password.dirty([String value = '']) : super.dirty(value);
 
-  static final _passwordRegExp = RegExp(r'^[A-Za-z\d@$!%*?&]{8,}$');
+  static final _passwordRegExp =
+      RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
 
   @override
   PasswordValidationError? validator(String value) {
     if (value.isEmpty) {
       return PasswordValidationError.empty;
     }
-    return _passwordRegExp.hasMatch(value) && value.length < 10 ? null : PasswordValidationError.invalid;
+    return _passwordRegExp.hasMatch(value) && value.length < 10
+        ? null
+        : PasswordValidationError.invalid;
   }
 }
 
@@ -21,7 +24,7 @@ extension Explanation on PasswordValidationError {
   String? get name {
     switch (this) {
       case PasswordValidationError.invalid:
-        return "Invalid condition";
+        return "Invalid condition (Example Test@1)";
       default:
         return null;
     }

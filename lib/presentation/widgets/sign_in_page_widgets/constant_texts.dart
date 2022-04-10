@@ -8,9 +8,9 @@ class LoginText extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.only(bottom: 30.0, top: 30.0),
       child: Text(
-        'Welcome to BlaBla App',
-        textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        'Hello Again!\nWelcome\nback',
+        textAlign: TextAlign.left,
+        style: TextStyle(fontSize: 38, fontWeight: FontWeight.bold),
       ),
     );
   }

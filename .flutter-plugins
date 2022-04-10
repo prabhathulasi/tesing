@@ -1,11 +1,11 @@
 # This is a generated file; do not edit or check into version control.
-cloud_firestore=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\cloud_firestore-2.5.4\\
-cloud_firestore_web=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-2.6.11\\
-firebase_auth=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth-3.3.12\\
-firebase_auth_oauth=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth_oauth-1.2.0\\
-firebase_auth_oauth_web=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth_oauth_web-1.1.0\\
-firebase_auth_web=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth_web-3.3.10\\
-firebase_core=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_core-1.14.0\\
-firebase_core_web=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_core_web-1.6.1\\
-google_sign_in=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\google_sign_in-5.2.4\\
-google_sign_in_web=C:\\Users\\efema\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.10.0+5\\
+cloud_firestore=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-2.5.4/
+cloud_firestore_web=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-2.6.11/
+firebase_auth=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-3.3.13/
+firebase_auth_oauth=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_oauth-1.2.0/
+firebase_auth_oauth_web=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_oauth_web-1.1.0/
+firebase_auth_web=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth_web-3.3.11/
+firebase_core=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.14.0/
+firebase_core_web=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.6.1/
+google_sign_in=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-5.2.4/
+google_sign_in_web=/Users/prabhakaran/Documents/flutterv2.10/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in_web-0.10.0+5/

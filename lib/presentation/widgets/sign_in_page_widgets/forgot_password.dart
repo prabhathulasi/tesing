@@ -10,20 +10,15 @@ class ForgotPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 15, left: 5),
-      child: CupertinoButton(
-          padding: EdgeInsets.zero,
-          borderRadius: BorderRadius.circular(3),
-          child: Container(
-            margin: const EdgeInsets.all(3),
-            child: const Text(
-              'Forgot Pw',
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
-            ),
-          ),
-          color: Colors.blueAccent,
-          onPressed: () {
-            context.read<LoginCubit>().resetPassword();
-          }),
+      child: InkWell(
+        onTap: () {
+          context.read<LoginCubit>().resetPassword();
+        },
+        child: const Text(
+          "Forgot Your Password?",
+          style: TextStyle(fontSize: 15),
+        ),
+      ),
     );
   }
 }
